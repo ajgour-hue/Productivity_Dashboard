@@ -1,14 +1,99 @@
+@font-face {
+    font-family: "Aeonik-Regular";
+    src: url("./fonts/fonnts.com-Aeonik-Regular.ttf") format("truetype");
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html,body{
+html, body{
     height: 100%;
     width: 100%;
     background-color: black;
     color: aliceblue;
-    font-family: monospace;
+    font-family: "Aeonik-Regular", sans-serif;
 }
 
+#main{
+    height: 100%;
+    width: 100%;
+}
+
+nav{
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    background-color: red;
+}
+
+section.allElems{
+   height:100%;
+    width: 100%;
+    background-color: darkolivegreen;
+    padding: 40px;
+    padding-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+    position: absolute;
+}
+
+.elem{
+    background-color: black;
+    height: 400px;
+    width: 270px;
+    border-radius: 10px;
+    transition: all ease 0.2s;
+    overflow: hidden;
+    position: relative;
+}
+
+.elem img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.elem:active{
+    scale: 0.97;
+}
+
+.elem h2{
+    position: absolute;
+ bottom : 4%;
+ right: 5%;
+ color: #FFF;
+ font-weight: 200;
+}
+
+section.fullElem{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(90, 159, 90);
+    display: none;
+    position: absolute;
+    padding: 20px;
+}
+
+.back{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid white;
+    position: absolute;
+    right: 5%;
+    top: 2%;
+    cursor: pointer;
+    font-size: 20px;
+  font-family: monospace;
+  background-color: red;
+ color: white;
+}
+
+.back:active{
+    scale: 0.97;
+
+}
