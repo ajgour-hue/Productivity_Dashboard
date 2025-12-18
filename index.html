@@ -14,49 +14,121 @@
             
         </nav> -->
 
+
+        
         <section class="allElems">
             <div class="todo elem" id="0">
                 <img src="https://i.pinimg.com/1200x/af/62/d6/af62d642f9546f55a108d28d17c59ef8.jpg" alt="">
                 <h2> To Do List </h2>
             </div>
             <div class="daily elem" id="1">
-               <img src="https://i.pinimg.com/736x/a4/96/28/a4962894cb3e68dcb2f2f055bfaf4371.jpg" alt="">
+                <img src="https://i.pinimg.com/736x/a4/96/28/a4962894cb3e68dcb2f2f055bfaf4371.jpg" alt="">
                 <h2> Daily Planner</h2>
             </div>
             <div class="moti elem" id="2">
-              <img src="https://i.pinimg.com/736x/cf/32/3b/cf323b3b7ffeb50d0199e773bcb07e85.jpg" alt="">
+                <img src="https://i.pinimg.com/736x/cf/32/3b/cf323b3b7ffeb50d0199e773bcb07e85.jpg" alt="">
                 <h2>Motivation </h2>
             </div>
             <div class="pomo elem" id="3">
-              <img src="https://i.pinimg.com/1200x/a6/21/8e/a6218ea5ec41c1a4dadc0749c012404b.jpg" alt="">
+                <img src="https://i.pinimg.com/1200x/a6/21/8e/a6218ea5ec41c1a4dadc0749c012404b.jpg" alt="">
                 <h2> Pomodoro Timer </h2>
             </div>
             <div class="goals elem" id="4">
-              <img src="https://i.pinimg.com/1200x/cc/d6/2e/ccd62e4fda921ad52089b8071158a2ea.jpg" alt="">
+                <img src="https://i.pinimg.com/1200x/cc/d6/2e/ccd62e4fda921ad52089b8071158a2ea.jpg" alt="">
                 <h2>Daily Goals</h2>
             </div>
         </section>
 
-        <section class="fullElem">
-            <button class="back" id="0"> Close </button>
-            <h1>Todo Page</h1>
+
+
+
+
+
+        <!-- fullPage -->
+
+
+
+        <!-- todoList -->
+        <section class="fullElem todo-list-fullpage">
+
+            <main>
+                <nav>
+                    <div class="right"> <button id="toggle-modal">Add new Tasks</button></div>
+                    <button class="back" id="0"> Close </button>
+
+                </nav>
+
+                <section class="board">
+
+
+                    <div id="todo" class="task-colom">
+                        <div class="headings">
+                            <div class="left">Todo </div>
+                            <div class="right">count</div>
+                        </div>
+                        <!-- <div  draggable="true" class="task">
+                    <h1>Task 1</h1>
+                    <p>Description of the task</p>
+                    <button>Delete</button>
+                </div> -->
+                    </div>
+
+                    <div id="progress" class="task-colom ">
+                        <div class="headings  ">
+                            <div class="left">In Progress </div>
+                            <div class="right">count</div>
+                        </div>
+
+                    </div>
+
+                    <div id="done" class="task-colom">
+                        <div class="headings">
+                            <div class="left">Done </div>
+                            <div class="right">count</div>
+                        </div>
+
+                    </div>
+
+
+                </section>
+            </main>
+
+            <div class="modal add-new-task">
+                <div class="bg"></div>
+                <div class="center">
+                    <input type="text" id="task-title-input" placeholder="Task Title">
+                    <textarea id="task-desc-input" placeholder="Task Description"></textarea>
+                    <button id="add-new-task">Add Task</button>
+                </div>
+            </div>
         </section>
-        <section class="fullElem">
+
+
+        <!-- daily Planner -->
+        <section class="fullElem daily-planner-fullpage">
             <button class="back" id="1"> Close </button>
             <h1>Daily Planner</h1>
         </section>
-        <section class="fullElem">
+
+
+        <!-- motivational -->
+        <section class="fullElem motivational-fullpage">
             <button class="back" id="2"> Close </button>
             <h1>Motivation</h1>
         </section>
-        <section class="fullElem">
-            <button class="back"  id="3"> Close </button>
+
+        <!-- pomodoro -->
+        <section class="fullElem pomodoro-fullpage">
+            <button class="back" id="3"> Close </button>
             <h1>Pomodoro</h1>
         </section>
-        <section class="fullElem">
+
+        <!--dailyGoals -->
+        <section class="fullElem daily-goals-fullpage">
             <button class="back" id="4"> Close </button>
             <h1>Daily Goals</h1>
         </section>
+
 
 
     </div>

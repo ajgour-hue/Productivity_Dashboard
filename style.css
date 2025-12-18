@@ -17,6 +17,28 @@ html, body{
     font-family: "Aeonik-Regular", sans-serif;
 }
 
+:root {
+    --background-color: #000000;
+    --bg-card-color: #333;
+    --bg-btn-color: #4a90e2;
+    --bg-tast-btn: #d9534f;
+
+    --font-family: monospace;
+
+    --color: white;
+
+    --nav-padding: 1rem 2rem;
+    --padding-xs: 5px;
+    --padding-sm: 10px;
+    --padding-lg: 25px;
+    --padding-xl: 35px;
+
+    --br-radius: 15px;
+    --br-radius-sm: 10px;
+
+    --border: 2px solid white;
+}
+
 #main{
     height: 100%;
     width: 100%;
@@ -32,7 +54,8 @@ nav{
 section.allElems{
    height:100%;
     width: 100%;
-    background-color: darkolivegreen;
+background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+
     padding: 40px;
     padding-top: 60px;
     display: flex;
@@ -47,9 +70,10 @@ section.allElems{
     height: 400px;
     width: 270px;
     border-radius: 10px;
-    transition: all ease 0.2s;
+ transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
     position: relative;
+    cursor: pointer;
 }
 
 .elem img{
@@ -69,31 +93,172 @@ section.allElems{
  color: #FFF;
  font-weight: 200;
 }
-
 section.fullElem{
     height: 100%;
     width: 100%;
-    background-color: rgb(90, 159, 90);
+    background-color: #000000;
     display: none;
     position: absolute;
     padding: 20px;
 }
 
 .back{
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: 1px solid white;
-    position: absolute;
-    right: 5%;
-    top: 2%;
-    cursor: pointer;
-    font-size: 20px;
+   
   font-family: monospace;
   background-color: red;
  color: white;
+  align-self: center;
+    padding: var(--padding-sm);
+    border-radius: var(--br-radius);
+    border: none;
+    cursor: pointer;
 }
 
 .back:active{
     scale: 0.97;
 
 }
+
+
+
+
+/* todo list */
+
+
+main {
+    width: 100%;
+    color: var(--color);
+}
+
+nav {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--nav-padding);
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
+}
+
+nav .left {
+    font-size: 25px;
+    padding: var(--padding-sm);
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    border-radius: var(--br-radius);
+    font-family: cursive;
+}
+
+nav .right button {
+    border-radius: var(--br-radius);
+    padding: var(--padding-sm);
+    background-color: var(--bg-btn-color);
+    border: none;
+    color: white;
+}
+
+section {
+    padding: var(--padding-xl);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap; /* IMPORTANT for responsiveness */
+    gap: 20px;
+}
+
+.task-colom {
+    width: 32%;
+    padding: var(--padding-lg);
+    border-radius: var(--br-radius);
+    border: var(--border);
+    transition: all ease 0.6s;
+}
+
+.task-colom.hover-over {
+    border: 2px dashed white;
+    scale: 1.06;
+}
+
+.headings {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task {
+    margin-top: 20px;
+    padding: var(--padding-sm);
+    background-color: var(--bg-card-color);
+    border-radius: var(--br-radius);
+    gap: 10px;
+    cursor: grab;
+    display: flex;
+    flex-direction: column;
+}
+
+.task button {
+    align-self: flex-end;
+    border-radius: var(--br-radius-sm);
+    padding: 5px 10px;
+    background-color: var(--bg-tast-btn);
+    border: none;
+    color: white;
+}
+
+/* ================= MODAL ================== */
+.modal {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.modal.active {
+    display: flex;
+}
+
+.bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+    backdrop-filter: blur(5px);
+}
+
+.modal .center {
+    z-index: 10;
+    background-color: var(--background-color);
+    padding: var(--padding-sm);
+    border-radius: var(--br-radius);
+    border: var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal .center input,
+.modal .center textarea {
+    background-color: var(--bg-card-color);
+    border: none;
+    outline: none;
+    color: white;
+    padding: var(--padding-xs);
+    border-radius: var(--br-radius);
+    width: 100%;
+}
+
+.modal .center button {
+    align-self: center;
+    padding: var(--padding-sm);
+    border-radius: var(--br-radius);
+    border: none;
+}
+
+
+/* daily Planner */
