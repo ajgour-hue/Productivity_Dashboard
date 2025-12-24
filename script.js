@@ -168,3 +168,303 @@ addTaskButton.addEventListener("click", () => {
 }
 todoList();
 
+
+function dailyPlanner(){
+    
+let dayPlanData = JSON.parse(localStorage.getItem('dayPlanData')) || {};
+ var hours = Array.from({length:18} ,(elem,idx) =>{
+  let start = 6 + idx;
+  let end = start + 1;
+
+  function format(h) {
+    let period = h >= 12 ? "pm" : "am";
+    let hour = h % 12 === 0 ? 12 : h % 12;
+    return `${hour}:00 ${period}`;
+  }
+
+  return `${format(start)} - ${format(end)}`;
+})
+
+
+
+wholeDaySum = '';
+hours.forEach(function(elem , idx){
+
+    var savedData = dayPlanData[idx] ? dayPlanData[idx] : '';
+
+    wholeDaySum += ` <div class="day-planner-time">
+                    <p>${elem}</p>
+                    <input id="${idx}" type="text" placeholder="...." value=${savedData} >
+                </div>`
+})
+ 
+var dayPlanner = document.querySelector('.day-planner');
+dayPlanner.innerHTML = wholeDaySum;
+
+
+var dayPlannerInput = document.querySelectorAll('.day-planner-time input');
+
+ dayPlannerInput.forEach(function(elem){
+     elem.addEventListener('input' , function(){
+        dayPlanData[elem.id] = elem.value;
+        localStorage.setItem('dayPlanData' , JSON.stringify(dayPlanData));
+
+        console.log(dayPlanData);
+        
+     })
+     
+ })
+
+}
+dailyPlanner();
+
+
+
+function motivation(){
+    
+let motivationalQuote = document.querySelector('.motivation-2 h1');
+ let motivationalAuthor = document.querySelector('.motivation-3 p');  
+
+
+ 
+async function fetchQuote() {
+
+    const url =
+      "https://api.allorigins.win/raw?url=https://zenquotes.io/api/random";
+
+    const res = await fetch(url);
+    const data = await res.json();
+
+    const [{ q, a }] = data;
+
+motivationalQuote.innerHTML = q;
+motivationalAuthor.innerHTML = a;
+
+
+    // motivationalQuote.innerHTML = data[0].q;
+    // motivationalAuthor.innerHTML = data[0].a;
+ 
+}
+
+fetchQuote();
+
+
+}
+
+motivation();
+
+function pomodorTimer(){
+    
+var min5 = document.querySelector('#one');
+var min10 = document.querySelector('#two');
+var min20 = document.querySelector('#three');
+var progressBox = document.querySelector('#box');
+var timer = document.querySelector('#timer');
+var timeh1 = document.querySelector('#time');
+var stop = document.querySelector('#stop');
+
+let interval = null;
+let totalTime = 0;
+let remainingTime = 0 ;
+let min  =0 ;
+let sec = 0 ;
+let displayMinutes = 0;
+displaySeconds = 0 ;
+
+
+min5.addEventListener('click' , function(){
+    
+    clearInterval(interval)
+    interval = null
+    totalTime = 120;
+    remainingTime = totalTime;
+    min = 2 ;
+    sec = 0 ;
+    showTimer(min , sec);
+    updateProgress();
+        interval = setInterval(countDown, 1000);
+
+})
+
+min10.addEventListener('click' , function(){
+     clearInterval(interval)
+    interval = null
+    totalTime = 600 ;
+    remainingTime = totalTime;
+    min = 10 ;
+    sec = 0 ;
+    showTimer(min , sec);
+    updateProgress();
+     if (interval === null && remainingTime > 0) {
+        interval = setInterval(countDown, 1000);
+    }
+})
+
+
+min20.addEventListener('click' , function(){
+     clearInterval(interval)
+    interval = null
+    totalTime = 1200 ;
+    remainingTime = totalTime;
+    min = 20 ;
+    sec = 0 ;
+    showTimer(min , sec);
+    updateProgress();
+     if (interval === null && remainingTime > 0) {
+        interval = setInterval(countDown, 1000);
+    }
+})
+
+
+function showTimer(min , sec){
+   displayMinutes = (min < 10 ? "0" + min : min);
+displaySeconds = (sec < 10 ? "0" + sec : sec);
+   timeh1.innerHTML = displayMinutes +":" +displaySeconds ;
+}
+
+
+
+function countDown(){
+    remainingTime -- ;
+    min = Math.floor(remainingTime/60);
+    sec = remainingTime%60;
+    showTimer(min , sec);
+    updateProgress();
+    if(remainingTime <= 0 ){
+        timer.innerHTML = "TimesUp!!";
+        timer.style.color = 'red';
+         timeh1.innerHTML = "00:00";    
+        clearInterval(interval);
+        interval = null ;
+    }
+}
+
+
+stop.addEventListener('click' , function(){
+      
+
+      if(interval != null){
+clearInterval(interval);
+      interval  = null ;
+      stop.innerHTML = 'Resume';
+      }
+      else{
+        interval = setInterval(countDown , 1000);
+         stop.innerHTML = 'Stop';
+      }
+})
+
+
+function updateProgress() {
+    let progress = ((totalTime - remainingTime) / totalTime) * 360;
+
+    progressBox.style.background = `
+        conic-gradient(#5a72ff ${progress}deg, #b8c8ff 0deg)
+    `;
+}
+}
+
+pomodorTimer();
+
+function weatherFunctionality() {
+
+
+    // I have removed API key for security purpose
+    var apiKey = null
+    var city = 'Bhopal'
+
+
+
+    var header1Time = document.querySelector('.header1 h1')
+    var header1Date = document.querySelector('.header1 h2')
+    var header2Temp = document.querySelector('.header2 h2')
+    var header2Condition = document.querySelector('.header2 h4')
+    var precipitation = document.querySelector('.header2 .precipitation')
+    var humidity = document.querySelector('.header2 .humidity')
+    var wind = document.querySelector('.header2 .wind')
+
+    var data = null
+
+    async function weatherAPICall() {
+        var response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`)
+        data = await response.json()
+
+        header2Temp.innerHTML = `${data.current.temp_c}°C`
+        header2Condition.innerHTML = `${data.current.condition.text}`
+        wind.innerHTML = `Wind: ${data.current.wind_kph} km/h`
+        humidity.innerHTML = `Humidity: ${data.current.humidity}%`
+        precipitation.innerHTML = `Heat Index : ${data.current.heatindex_c}%`
+    }
+
+    weatherAPICall()
+
+
+    function timeDate() {
+        const totalDaysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+        const monthNames = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+        var date = new Date()
+        var dayOfWeek = totalDaysOfWeek[date.getDay()]
+        var hours = date.getHours()
+        var minutes = date.getMinutes()
+        var seconds = date.getSeconds()
+        var tarik = date.getDate()
+        var month = monthNames[date.getMonth()]
+        var year = date.getFullYear()
+
+        header1Date.innerHTML = `${tarik} ${month}, ${year}`
+
+        if (hours > 12) {
+            header1Time.innerHTML = `${dayOfWeek}, ${String(hours - 12).padStart('2', '0')}:${String(minutes).padStart('2', '0')}:${String(seconds).padStart('2', '0')} PM`
+
+        } else {
+            header1Time.innerHTML = `${dayOfWeek}, ${String(hours).padStart('2', '0')}:${String(minutes).padStart('2', '0')}:${String(seconds).padStart('2', '0')} AM`
+        }
+    }
+
+    setInterval(() => {
+        timeDate()
+    }, 1000);
+
+}
+
+weatherFunctionality()
+
+function functionality(){
+
+  function showSection(className){
+    document.querySelectorAll('.fullElem')
+      .forEach(sec => sec.classList.remove('active'));
+
+    const section = document.querySelector(`.${className}`);
+    if(section) section.classList.add('active');
+  }
+
+  document.querySelector('#nav-todo')
+    .addEventListener('click', () => showSection('todo-list-fullpage'));
+
+  document.querySelector('#nav-planner')
+    .addEventListener('click', () => showSection('daily-planner-fullpage'));
+
+  document.querySelector('#nav-motivation')
+    .addEventListener('click', () => showSection('motivational-fullpage'));
+
+  document.querySelector('#nav-pomodoro')
+    .addEventListener('click', () => showSection('pomodoro-fullpage'));
+}
+
+functionality();
+
+
+
+function changeTheme(){
+    document.querySelector('.theme')
+  .addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+  });
+
+}
+changeTheme();

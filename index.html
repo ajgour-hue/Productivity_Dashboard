@@ -9,34 +9,85 @@
 </head>
 
 <body>
+
     <div id="main">
-        <!-- <nav>
-            
-        </nav> -->
 
 
-        
+
+
+
         <section class="allElems">
-            <div class="todo elem" id="0">
-                <img src="https://i.pinimg.com/1200x/af/62/d6/af62d642f9546f55a108d28d17c59ef8.jpg" alt="">
-                <h2> To Do List </h2>
+
+            <nav>
+                <div class="left-nav">
+                    <h3> Productivity Dashboard </h3>
+                </div>
+
+                <div class="right-nav">
+                    <a id="nav-todo">todo-list</a>
+                    <a id="nav-planner">daily-planner</a>
+                    <a id="nav-motivation">motivation</a>
+                    <a id="nav-pomodoro">pomodoro</a>
+                </div>
+
+                <div class="theme">
+                    <button id="theme-button"> ChangeTheme </button>
+                </div>
+
+            </nav>
+
+            <header>
+
+                <div class="header1">
+                    <h2>20 may 2025</h2>
+                    <h1>Saturday, 1:00 pm</h1>
+                    <h2>Bhopal (MP)</h2>
+                </div>
+
+                <div class="header2">
+                    <h2>20°C</h2>
+                    <h4>Light rain</h4>
+        <img src="./icons8-heavy-rain-48.png" alt="">
+                </div>
+
+
+                <div class="header3">
+                    <div class="top">
+                        <div class="streak-icon">🔥</div>
+                    <div class="streak-text">
+                        <h3>7 Day Streak</h3>
+                        <p>Keep it up!</p>
+                       
+                    </div>
+                    </div>
+                      <div class="btm">
+                            <h3 class="precipitation">Precipitation: 35%</h3>
+                        <h3 class="humidity">Humidity: 49%</h3>
+                        <h3 class="wind">Wind: 10 km/h</h3>
+                        </div>
+                </div>
+
+            </header>
+
+            <div class="allFeatures">
+                <div class="todo elem" id="0">
+                    <img src="https://i.pinimg.com/736x/5d/a8/ab/5da8ab010ccb8416d531f0a7fa35ede7.jpg" alt="">
+                    <h2> To Do List </h2>
+                </div>
+                <div class="daily elem" id="1">
+                    <img src="https://i.pinimg.com/1200x/98/b8/05/98b8050e6f0759d6de089bda6002fe2b.jpg" alt="">
+                    <h2> Daily Planner</h2>
+                </div>
+                <div class="moti elem" id="2">
+                    <img src="https://i.pinimg.com/736x/1a/e1/13/1ae113405b2ef0d2e5430f0b7a701ce7.jpg" alt="">
+                    <h2>Motivation </h2>
+                </div>
+                <div class="pomo elem" id="3">
+                    <img src="https://i.pinimg.com/736x/01/dd/8a/01dd8a36ab902d0cea027320eef2dd13.jpg" alt="">
+                    <h2> Pomodoro Timer </h2>
+                </div>
             </div>
-            <div class="daily elem" id="1">
-                <img src="https://i.pinimg.com/736x/a4/96/28/a4962894cb3e68dcb2f2f055bfaf4371.jpg" alt="">
-                <h2> Daily Planner</h2>
-            </div>
-            <div class="moti elem" id="2">
-                <img src="https://i.pinimg.com/736x/cf/32/3b/cf323b3b7ffeb50d0199e773bcb07e85.jpg" alt="">
-                <h2>Motivation </h2>
-            </div>
-            <div class="pomo elem" id="3">
-                <img src="https://i.pinimg.com/1200x/a6/21/8e/a6218ea5ec41c1a4dadc0749c012404b.jpg" alt="">
-                <h2> Pomodoro Timer </h2>
-            </div>
-            <div class="goals elem" id="4">
-                <img src="https://i.pinimg.com/1200x/cc/d6/2e/ccd62e4fda921ad52089b8071158a2ea.jpg" alt="">
-                <h2>Daily Goals</h2>
-            </div>
+
         </section>
 
 
@@ -53,9 +104,8 @@
 
             <main>
                 <nav>
-                    <div class="right"> <button id="toggle-modal">Add new Tasks</button></div>
                     <button class="back" id="0"> Close </button>
-
+                    <div class="right"> <button id="toggle-modal">Add new Tasks</button></div>
                 </nav>
 
                 <section class="board">
@@ -101,34 +151,82 @@
                     <button id="add-new-task">Add Task</button>
                 </div>
             </div>
-        </section>
 
+        </section>
 
         <!-- daily Planner -->
         <section class="fullElem daily-planner-fullpage">
             <button class="back" id="1"> Close </button>
-            <h1>Daily Planner</h1>
+            <h1>Plan your day to be more productive</h1>
+
+            <div class="day-planner">
+
+
+            </div>
+
         </section>
+
+
+
 
 
         <!-- motivational -->
         <section class="fullElem motivational-fullpage">
             <button class="back" id="2"> Close </button>
             <h1>Motivation</h1>
+            <div class="motivational-container">
+                <div class="motivational-wrapper">
+                    <div class="motivation-1">
+
+                        <img src="./icons8-quote-24.png" alt="">
+                        <h2>One Thought for Today</h2>
+                    </div>
+                    <div class="motivation-2">
+
+                        <h1>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus!Lorem ipsum dolor
+                            sit amet consectetur adipisici
+                        </h1>
+                    </div>
+
+                    <div class="motivation-3">
+                        <p>author name</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- pomodoro -->
         <section class="fullElem pomodoro-fullpage">
             <button class="back" id="3"> Close </button>
-            <h1>Pomodoro</h1>
-        </section>
+            <h1>Pomodoro Timer</h1>
 
-        <!--dailyGoals -->
-        <section class="fullElem daily-goals-fullpage">
-            <button class="back" id="4"> Close </button>
-            <h1>Daily Goals</h1>
-        </section>
+            <main>
 
+                <div class="container">
+                    <header>
+                        <h1>Focus-mode </h1>
+                    </header>
+                    <div class="top">
+                        <button id="one"> 2 mins </button>
+                        <button id="two"> 10 mins </button>
+                        <button id="three"> 20 mins </button>
+                    </div>
+                    <div class="main">
+                        <div class="left">
+                            <h2 id="timer"> Timer </h2>
+                            <h1 id="time">00 : 00</h1>
+                            <button id="stop">Stop</button>
+                        </div>
+                        <div id="box" class="box">
+                            <div class="inner">||</div>
+                        </div>
+                    </div>
+                    <div class="bottom"></div>
+                </div>
+            </main>
+
+        </section>
 
 
     </div>
