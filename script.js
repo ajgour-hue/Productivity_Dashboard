@@ -433,30 +433,48 @@ function weatherFunctionality() {
 
 weatherFunctionality()
 
+
 function functionality(){
 
   function showSection(className){
-    document.querySelectorAll('.fullElem')
-      .forEach(sec => sec.classList.remove('active'));
+
+    document.querySelectorAll('.fullElem').forEach(sec => {
+      sec.style.display = 'none';
+    });
 
     const section = document.querySelector(`.${className}`);
-    if(section) section.classList.add('active');
+    if(section){
+      section.style.display = 'block';
+    }
   }
 
   document.querySelector('#nav-todo')
-    .addEventListener('click', () => showSection('todo-list-fullpage'));
+    .addEventListener('click', e => {
+      e.preventDefault();
+      showSection('todo-list-fullpage');
+    });
 
   document.querySelector('#nav-planner')
-    .addEventListener('click', () => showSection('daily-planner-fullpage'));
+    .addEventListener('click', e => {
+      e.preventDefault();
+      showSection('daily-planner-fullpage');
+    });
 
   document.querySelector('#nav-motivation')
-    .addEventListener('click', () => showSection('motivational-fullpage'));
+    .addEventListener('click', e => {
+      e.preventDefault();
+      showSection('motivational-fullpage');
+    });
 
   document.querySelector('#nav-pomodoro')
-    .addEventListener('click', () => showSection('pomodoro-fullpage'));
+    .addEventListener('click', e => {
+      e.preventDefault();
+      showSection('pomodoro-fullpage');
+    });
 }
 
 functionality();
+
 
 
 
@@ -468,3 +486,66 @@ function changeTheme(){
 
 }
 changeTheme();
+
+
+
+
+
+function updateProgress(){
+
+  const now = new Date();
+
+  /* ========== MONTH PROGRESS ========== */
+  const monthNames = [
+    "January","February","March","April","May","June",
+    "July","August","September","October","November","December"
+  ];
+
+  const currentMonth = now.getMonth();
+  const year = now.getFullYear();
+
+  const totalMonthDays = new Date(year, currentMonth + 1, 0).getDate();
+  const passedMonthDays = now.getDate();
+
+  const monthPercent = ((passedMonthDays / totalMonthDays) * 100).toFixed(2);
+
+  document.getElementById("monthTitle").innerText =
+    `${monthNames[currentMonth]} Progress`;
+
+  document.getElementById("monthDays").innerText =
+    `${passedMonthDays} / ${totalMonthDays} days`;
+
+  document.getElementById("monthPercent").innerText =
+    `${monthPercent}% month completed`;
+
+  document.getElementById("monthFill").style.width =
+    monthPercent + "%";
+
+
+  /* ========== YEAR PROGRESS ========== */
+  const startOfYear = new Date(year, 0, 1);
+  const dayOfYear = Math.floor(
+    (now - startOfYear) / (1000 * 60 * 60 * 24)
+  ) + 1;
+
+  const isLeap =
+    (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+
+  const totalYearDays = isLeap ? 366 : 365;
+
+  const yearPercent = ((dayOfYear / totalYearDays) * 100).toFixed(2);
+
+  document.getElementById("yearTitle").innerText =
+    `Year ${year} Progress`;
+
+  document.getElementById("yearDays").innerText =
+    `${dayOfYear} / ${totalYearDays} days`;
+
+  document.getElementById("yearPercent").innerText =
+    `${yearPercent}% year completed`;
+
+  document.getElementById("yearFill").style.width =
+    yearPercent + "%";
+}
+
+updateProgress();
