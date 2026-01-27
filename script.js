@@ -1,3 +1,4 @@
+
 function openCards(){
     
 var allElems = document.querySelectorAll('.elem');
@@ -495,7 +496,7 @@ function updateProgress(){
 
   const now = new Date();
 
-  /* ========== MONTH PROGRESS ========== */
+  /* ========== MONTH PROGRESS =========== */
   const monthNames = [
     "January","February","March","April","May","June",
     "July","August","September","October","November","December"
