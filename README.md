@@ -85,7 +85,6 @@ This project is open source and free to use.
 
 <img width="1918" height="882" alt="Screenshot 2026-02-15 185250" src="https://github.com/user-attachments/assets/0419bda9-da85-4e57-983c-1d9c16a09a67" />
 
-<img width="1909" heig<img width="1913" height="885" alt="Screenshot 2026-02-15 185321" src="https://github.com/user-attachments/assets/e3c6222f-3634-4782-aee8-6c84d6f29099" />
+<img width="1913" height="885" alt="Screenshot 2026-02-15 185321" src="https://github.com/user-attachments/assets/e3c6222f-3634-4782-aee8-6c84d6f29099" />
 
-ht="884" alt="Screenshot 2026-02-15 185302" src="https://github.com/user-attachments/assets/63d9215a-c59c-46af-aabb-32baa02d4144" />
 <img width="1908" height="890" alt="Screenshot 2026-02-15 185341" src="https://github.com/user-attachments/assets/50b31458-a7eb-47ae-a866-b0f5b3023816" />
