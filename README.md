@@ -7,19 +7,19 @@ https://productivity-dashboard-kappa.vercel.app
 
 Features
 
-📅 Displays current date, time, and location
+ Displays current date, time, and location
 
-🌦️ Shows weather information
+ Shows weather information
 
-💬 Displays motivational quotes
+ Displays motivational quotes
 
-🧭 Clean and modern user interface
+ Clean and modern user interface
 
-⚡ Fully responsive design
+ Fully responsive design
 
-🎯 Helps improve daily productivity and focus
+ Helps improve daily productivity and focus
 
-Tech Stack
+Tech Stack:
 
 HTML5
 
@@ -29,7 +29,7 @@ JavaScript (Vanilla JS)
 
 Vercel (Deployment)
 
-Project Structure
+Project Structure:
 Productivity_Dashboard/
 │
 ├── index.html        # Main HTML file
@@ -39,7 +39,7 @@ Productivity_Dashboard/
 ├── icons/            # Icons and images
 └── README.md         # Project documentation
 
-How to Run Locally
+How to Run Locally:
 
 Clone the repository
 
@@ -55,13 +55,8 @@ Run the project
 
 Open index.html in your browser.
 
-Screenshots
 
-(Add screenshots here if available)
-
-![Dashboard Screenshot](screenshot.png)
-
-Future Improvements
+Future Improvements:
 
 Add To-Do List feature
 
@@ -71,7 +66,7 @@ Add dark/light mode toggle
 
 Add productivity analytics
 
-Author
+Author:
 
 Ajay Gour
 B.Tech Student | Web Developer
@@ -80,6 +75,6 @@ GitHub: https://github.com/ajgour-hue
 
 LinkedIn: https://www.linkedin.com/in/ajay-gour-225b25395
 
-License
+License:
 
 This project is open source and free to use.
