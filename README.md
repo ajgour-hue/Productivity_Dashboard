@@ -1,1 +1,58 @@
-[Productivity_Dashboard_README.pdf](https://github.com/user-attachments/files/25325099/Productivity_Dashboard_README.pdf)
+Productivity Dashboard =>
+A modern and responsive Productivity Dashboard built using HTML, CSS, and JavaScript to help users stay organized, focused, and motivated throughout the day.
+
+🔗 Live Demo:
+https://productivity-dashboard-kappa.vercel.app
+
+Features:
+ Displays current date, time, and location
+ Shows weather information
+ Displays motivational quotes
+ Clean and modern user interface
+ Fully responsive design
+ Helps improve daily productivity and focus
+
+Tech Stack:
+
+HTML5
+CSS3
+JavaScript (Vanilla JS)
+Vercel (Deployment)
+
+Project Structure:
+
+Productivity_Dashboard/
+│
+├── index.html        # Main HTML file
+├── style.css         # Styling file
+├── script.js         # JavaScript functionality
+├── fonts/            # Custom fonts
+├── icons/            # Icons and images
+└── README.md         # Project documentation
+
+How to Run Locally:
+Clone the repository
+git clone https://github.com/ajgour-hue/Productivity_Dashboard.git
+
+
+Open the folder:
+cd Productivity_Dashboard
+
+
+Run the project:
+Open index.html in your browser.
+
+
+Future Improvements:
+Add user login system
+Add dark/light mode toggle
+Add productivity analytics
+
+Author:
+Ajay Gour
+B.Tech Student | Web Developer
+GitHub: https://github.com/ajgour-hue
+LinkedIn: https://www.linkedin.com/in/ajay-gour
+
+License:
+This project is open source and free to use.
