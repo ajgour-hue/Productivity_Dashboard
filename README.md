@@ -78,3 +78,6 @@ LinkedIn: https://www.linkedin.com/in/ajay-gour-225b25395
 License:
 
 This project is open source and free to use.
+
+
+<img width="1917" height="892" alt="Screenshot 2026-02-15 185211" src="https://github.com/user-attachments/assets/b13cd58f-177b-4b03-a30d-edc507e3cc0c" />
